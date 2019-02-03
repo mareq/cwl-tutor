@@ -1,0 +1,15 @@
+input_fastq_files:
+  - class: File
+    path: input/Coriell-NA12877_R1.fastq
+  - class: File
+    path: input/Coriell-NA12877_R2.fastq
+  - class: File
+    path: input/Coriell-NA12878_R1.fastq
+  - class: File
+    path: input/Coriell-NA12878_R2.fastq
+  - class: File
+    path: input/Coriell-NA12880_R1.fastq
+  - class: File
+    path: input/Coriell-NA12880_R2.fastq
+
+

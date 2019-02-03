@@ -1,0 +1,7 @@
+# output directories
+**/output*/*
+
+# private datasets
+private_*/*
+
+

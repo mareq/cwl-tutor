@@ -1,0 +1,7 @@
+input_fastq_files:
+  - class: File
+    path: input/GSM461178_untreat_paired_subset_1.fastq
+  - class: File
+    path: input/GSM461178_untreat_paired_subset_2.fastq
+
+
