@@ -1,7 +1,0 @@
-Module	Section	Sample Name	Source
-FastQC	all_sections	Coriell-NA12880_R1	/var/lib/cwl/stgec6a03c0-24a2-493a-ae8c-94542a1a14bd/Coriell-NA12880_R1_fastqc.zip
-FastQC	all_sections	Coriell-NA12877_R1	/var/lib/cwl/stg542078e7-546a-401f-9f71-fd046f842466/Coriell-NA12877_R1_fastqc.zip
-FastQC	all_sections	Coriell-NA12878_R1	/var/lib/cwl/stgb325a598-9365-4bd4-bd2f-8b6b2e01f4a7/Coriell-NA12878_R1_fastqc.zip
-FastQC	all_sections	Coriell-NA12878_R2	/var/lib/cwl/stg1fd2d533-38c6-46c5-95e5-9c7c53b10e95/Coriell-NA12878_R2_fastqc.zip
-FastQC	all_sections	Coriell-NA12880_R2	/var/lib/cwl/stg3c46f7da-aabf-4f46-b740-aa67096cb8f9/Coriell-NA12880_R2_fastqc.zip
-FastQC	all_sections	Coriell-NA12877_R2	/var/lib/cwl/stgcc82e598-9dfb-497a-8dfb-2b7f23cb8ef4/Coriell-NA12877_R2_fastqc.zip

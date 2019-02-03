@@ -19,6 +19,9 @@ requirements:
       $include: Dockerfile
 
 inputs:
+  - id: name
+    type: string
+    default: "multiqc"
   - id: input_files
     type: File[]
 
@@ -36,7 +39,7 @@ outputs:
   - id: stderr
     type: stderr
 
-stdout: multiqc.out
-stderr: multiqc.err
+stdout: $(inputs.name + ".out")
+stderr: $(inputs.name + ".err")
 
 

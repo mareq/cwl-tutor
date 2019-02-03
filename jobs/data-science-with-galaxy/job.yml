@@ -1,15 +1,27 @@
-input_fastq_files:
-  - class: File
-    path: input/Coriell-NA12877_R1.fastq
-  - class: File
-    path: input/Coriell-NA12877_R2.fastq
-  - class: File
-    path: input/Coriell-NA12878_R1.fastq
-  - class: File
-    path: input/Coriell-NA12878_R2.fastq
-  - class: File
-    path: input/Coriell-NA12880_R1.fastq
-  - class: File
-    path: input/Coriell-NA12880_R2.fastq
+input_fastq_pairs_array:
+  - class: types/fastq_pair.yml#fastq_pair
+    sample_name: Coriell-NA12877
+    read_1:
+      class: File
+      path: input/Coriell-NA12877_R1.fastq
+    read_2:
+      class: File
+      path: input/Coriell-NA12877_R2.fastq
+  - class: types/fastq_pair.yml#fastq_pair
+    sample_name: Coriell-NA12878
+    read_1:
+      class: File
+      path: input/Coriell-NA12878_R1.fastq
+    read_2:
+      class: File
+      path: input/Coriell-NA12878_R2.fastq
+  - class: types/fastq_pair.yml#fastq_pair
+    sample_name: Coriell-NA12880
+    read_1:
+      class: File
+      path: input/Coriell-NA12880_R1.fastq
+    read_2:
+      class: File
+      path: input/Coriell-NA12880_R2.fastq
 
 

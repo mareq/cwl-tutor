@@ -1,0 +1,11 @@
+type: record
+name: fastq_pair
+fields:
+  - name: sample_name
+    type: string
+  - name: read_1
+    type: File
+  - name: read_2
+    type: File
+
+

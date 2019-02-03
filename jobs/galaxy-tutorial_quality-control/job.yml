@@ -1,7 +1,11 @@
-input_fastq_files:
-  - class: File
-    path: input/GSM461178_untreat_paired_subset_1.fastq
-  - class: File
-    path: input/GSM461178_untreat_paired_subset_2.fastq
+input_fastq_pairs_array:
+  - class: types/fastq_pair.yml#fastq_pair
+    sample_name: GSM461178_untreat_paired_subset
+    read_1:
+      class: File
+      path: input/GSM461178_untreat_paired_subset_1.fastq
+    read_2:
+      class: File
+      path: input/GSM461178_untreat_paired_subset_2.fastq
 
 

@@ -1,0 +1,30 @@
+class: ExpressionTool
+
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: SchemaDefRequirement
+    types:
+      - $import: fastq_pair.yml
+
+inputs:
+  - id: fastq_pair
+    type: fastq_pair.yml#fastq_pair
+
+outputs:
+  - id: sample_name
+    type: string
+  - id: read_1
+    type: File
+  - id: read_2
+    type: File
+
+expression: >
+  ${
+    return {
+      "sample_name": inputs.fastq_pair.sample_name,
+      "read_1": inputs.fastq_pair.read_1,
+      "read_2": inputs.fastq_pair.read_2,
+    };
+  }
+
+

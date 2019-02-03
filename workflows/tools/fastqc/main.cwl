@@ -11,8 +11,8 @@ arguments:
   - prefix: --outdir
     valueFrom: .
   - prefix: --format
-    valueFrom: $(inputs.input_files_format)
-  - valueFrom: $(inputs.input_files)
+    valueFrom: $(inputs.input_file_format)
+  - valueFrom: $(inputs.input_file)
 
 requirements:
   - class: InlineJavascriptRequirement
@@ -22,26 +22,49 @@ requirements:
       $include: Dockerfile
 
 inputs:
-  - id: input_files
-    type: File[]
-  - id: input_files_format
+  - id: name
+    type: string
+    default: "fastqc"
+  - id: input_file
+    type: File
+  - id: input_file_format
     type: string
 
 outputs:
   - id: report_zip
-    type: File[]
+    type: File
     outputBinding:
-      glob: "*.zip"
+      glob: "*_fastqc.zip"
   - id: report_html
-    type: File[]
+    type: File
     outputBinding:
-      glob: "*.html"
+      glob: "*_fastqc.html"
   - id: stdout
     type: stdout
   - id: stderr
     type: stderr
 
-stdout: fastqc.out
-stderr: fastqc.err
+stdout: >
+  ${
+    var suffix = inputs.name;
+    if(suffix) {
+      suffix = "_" + suffix;
+    }
+
+    var nameparts = inputs.input_file.basename.match(/^([^.]*)(\..*)?/);
+    var nameroot = nameparts[1];
+    return nameroot + suffix + ".out";
+  }
+stderr: >
+  ${
+    var suffix = inputs.name;
+    if(suffix) {
+      suffix = "_" + suffix;
+    }
+
+    var nameparts = inputs.input_file.basename.match(/^([^.]*)(\..*)?/);
+    var nameroot = nameparts[1];
+    return nameroot + suffix + ".err";
+  }
 
 
