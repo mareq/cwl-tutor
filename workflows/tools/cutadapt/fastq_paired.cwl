@@ -41,7 +41,7 @@ arguments:
 requirements:
   - class: InlineJavascriptRequirement
   - class: DockerRequirement
-    dockerImageId: mareq/cutadapt:latest_1.0.0
+    dockerImageId: mareq/cutadapt:1.18_1.0.0
     dockerFile:
       $include: Dockerfile
 

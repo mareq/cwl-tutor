@@ -16,7 +16,7 @@ RUN apt-get update && \
 
 # install fastqc 
 ENV FASTQC_VERSION=0.11.8
-ADD http://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v${FASTQC_VERSION}.zip /tmp/
+ADD http://www.bioinformatics.babraham.ac.uk/projects/fastqc/fastqc_v${FASTQC_VERSION}.zip /tmp/.
 RUN cd /usr/local && \
     unzip /tmp/fastqc_v${FASTQC_VERSION}.zip && \
     rm -rf /tmp/fastqc_v${FASTQC_VERSION}.zip && \

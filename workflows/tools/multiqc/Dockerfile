@@ -15,7 +15,8 @@ RUN apt-get update && \
       pkg-config
 
 # install multiqc 
-RUN pip3 install multiqc
+ENV MULTIQC_VERSION=1.7
+RUN pip3 install multiqc==${MULTIQC_VERSION}
 
 # set the default command
 ENV LC_ALL=C.UTF-8

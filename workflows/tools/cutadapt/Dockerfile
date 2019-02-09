@@ -13,8 +13,9 @@ RUN apt-get update && \
       python3-pip
 
 # install multiqc 
+ENV CUTADAPTS_VERSION=1.18
 RUN pip3 install --upgrade setuptools && \
-    pip3 install cutadapt
+    pip3 install cutadapt==${CUTADAPTS_VERSION}
 
 # set the default command
 CMD [ /usr/local/bin/cutadapt ]

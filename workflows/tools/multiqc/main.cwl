@@ -14,7 +14,7 @@ arguments:
 requirements:
   - class: InlineJavascriptRequirement
   - class: DockerRequirement
-    dockerImageId: mareq/multiqc:latest_1.0.0
+    dockerImageId: mareq/multiqc:1.7_1.0.0
     dockerFile:
       $include: Dockerfile
 
