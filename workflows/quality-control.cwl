@@ -105,7 +105,8 @@ steps:
     scatter: input_fastq_pair
 
     in:
-      input_fastq_pair: input_fastq_pairs_array
+      - id: input_fastq_pair
+        source: input_fastq_pairs_array
 
     out:
       - id: fastqc_read_1_original_report_zip
@@ -130,6 +131,7 @@ steps:
       - id: fastqc_read_2_cutadapted_stderr
 
     run:
+
       class: Workflow
 
       inputs:
