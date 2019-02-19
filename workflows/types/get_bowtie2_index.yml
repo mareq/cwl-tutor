@@ -1,0 +1,27 @@
+class: ExpressionTool
+
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: SchemaDefRequirement
+    types:
+      - $import: bowtie2_index.yml
+
+inputs:
+  - id: bowtie2_index
+    type: bowtie2_index.yml#bowtie2_index
+
+outputs:
+  - id: directory
+    type: Directory
+  - id: filename_prefix
+    type: string
+
+expression: >
+  ${
+    return {
+      "directory": inputs.bowtie2_index.directory,
+      "filename_prefix": inputs.bowtie2_index.filename_prefix,
+    };
+  }
+
+

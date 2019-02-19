@@ -1,0 +1,9 @@
+type: record
+name: bowtie2_index
+fields:
+  - name: directory
+    type: Directory
+  - name: filename_prefix
+    type: string
+
+

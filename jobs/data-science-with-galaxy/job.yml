@@ -24,4 +24,11 @@ input_fastq_pairs_array:
       class: File
       path: input/Coriell-NA12880_R2.fastq
 
+input_bowtie2_index:
+  class: types/bowtie2_index.yml#bowtie2_index
+  directory:
+    class: Directory
+    path: ../../static/reference-genome/jobs/hg38/output
+  filename_prefix: hg38
+
 

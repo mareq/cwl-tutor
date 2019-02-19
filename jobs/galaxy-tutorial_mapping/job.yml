@@ -1,0 +1,18 @@
+input_fastq_pairs_array:
+  - class: types/fastq_pair.yml#fastq_pair
+    sample_name: wt_H3K4me3
+    read_1:
+      class: File
+      path: input/wt_H3K4me3_read1.fastq.gz
+    read_2:
+      class: File
+      path: input/wt_H3K4me3_read2.fastq.gz
+
+input_bowtie2_index:
+  class: types/bowtie2_index.yml#bowtie2_index
+  directory:
+    class: Directory
+    path: ../../static/reference-genome/jobs/mm10/output
+  filename_prefix: mm10
+
+
