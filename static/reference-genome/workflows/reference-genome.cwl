@@ -26,7 +26,7 @@ steps:
         valueFrom: $(inputs.name + "-wget")
       - id: url
         source: reference_genome_name
-        valueFrom: $("ftp://hgdownload.cse.ucsc.edu/goldenPath/" + inputs.url + "/chromosomes/*")
+        valueFrom: $("ftp://hgdownload.cse.ucsc.edu/goldenPath/" + inputs.url + "/bigZips/*")
     out:
       - id: downloaded_files
       - id: stdout
