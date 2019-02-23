@@ -20,9 +20,9 @@ inputs:
     type: types/bowtie2_index.yml#bowtie2_index
 
 outputs:
-  - id: bowtie2_sam_array
+  - id: bowtie2_bam_array
     type: File[]
-    outputSource: subworkflow/bowtie2_sam
+    outputSource: subworkflow/bowtie2_bam
   - id: bowtie2_stdout_array
     type: File[]
     outputSource: subworkflow/bowtie2_stdout
@@ -43,7 +43,7 @@ steps:
         source: input_bowtie2_index
 
     out:
-      - id: bowtie2_sam
+      - id: bowtie2_bam
       - id: bowtie2_stdout
       - id: bowtie2_stderr
 
@@ -58,9 +58,9 @@ steps:
           type: types/bowtie2_index.yml#bowtie2_index
 
       outputs:
-        - id: bowtie2_sam
+        - id: bowtie2_bam
           type: File
-          outputSource: bowtie2/output_sam
+          outputSource: sam2bam/output_bam
         - id: bowtie2_stdout
           type: File
           outputSource: bowtie2/stdout
@@ -104,6 +104,16 @@ steps:
               source: get_input_fastq_pair/read_2
           out:
             - id: output_sam
+            - id: stdout
+            - id: stderr
+
+        - id: sam2bam
+          run: tools/samtools/sam2bam.cwl
+          in:
+            - id: input_sam
+              source: bowtie2/output_sam
+          out:
+            - id: output_bam
             - id: stdout
             - id: stderr
 
